@@ -15,8 +15,4 @@ steps:
 
 - script: |
     apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
-    cp configs/hi3798mv100/hi3798mdmo1g_hi3798mv100_cfg.mak ./cfg.mak
-    source ./env.sh
-    make menuconfig
-    make build -j4 2>&1  | tee -a buildlog.txt
-  displayName: 'Run Build'
+  displayName: 'Install command'
