@@ -15,6 +15,12 @@ steps:
 
 - task: CmdLine@2
   inputs:
+    script: su root
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
+
+- task: CmdLine@2
+  inputs:
     script: apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
     #workingDirectory: # Optional
     #failOnStderr: false # Optional
