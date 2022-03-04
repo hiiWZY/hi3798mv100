@@ -1,0 +1,22 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- script: |
+    apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
+    cp configs/hi3798mv100/hi3798mdmo1g_hi3798mv100_cfg.mak ./cfg.mak
+    source ./env.sh
+    make menuconfig
+    make build -j4 2>&1  | tee -a buildlog.txt
+  displayName: 'Run Build'
