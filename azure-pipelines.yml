@@ -13,6 +13,8 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: |
-    apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
-  displayName: 'Install command'
+- task: CmdLine@2
+  inputs:
+    script: apt-get install gcc make gettext bison flex bc zlib1g-dev libncurses5-dev lzma
+    #workingDirectory: # Optional
+    #failOnStderr: false # Optional
