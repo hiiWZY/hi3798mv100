@@ -54,6 +54,6 @@
         FlashType="emmc"
         FileSystem="ext3/4"
         Start="30M"
-        Length="128M"
-        SelectFile="rootfs_128M.ext4" />
+        Length="2048M"
+        SelectFile="rootfs_2048M.ext4" />
 </Partition_Info>
